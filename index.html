@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillFront | Free Certification Programs</title>
+  <meta name="description" content="Official SkillFront GitHub Pages site for selected free certification programs, registration links, and companion audiobook study resources.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0f172a">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #0f766e;
+      --accent-2: #0f172a;
+      --soft: #ecfeff;
+      --soft-2: #f1f5f9;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      padding: 20px 0 0;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0 18px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    .hero {
+      padding: 36px 0 30px;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top right, #ccfbf1 0%, #ffffff 38%, #ffffff 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 44px 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid #99f6e4;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 1.07rem;
+      color: var(--muted);
+      max-width: 860px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent-2);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .notice {
+      margin: 22px 0 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      color: var(--muted);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 24px 0 18px;
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section .lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--soft-2);
+      color: var(--accent-2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 7px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .meta {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .meta li {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      color: #1e293b;
+      font-size: 0.95rem;
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .actions .btn {
+      flex: 1 1 220px;
+    }
+
+    .simple-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .simple-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .simple-box h3 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+    }
+
+    .simple-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 42px 0 56px;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .grid,
+      .simple-boxes {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-card {
+        padding: 28px 20px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#top">Skill<span>Front</span> Free Programs</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#programs">Programs</a>
+          <a href="#how-to-use">How to Use</a>
+          <a href="https://www.skillfront.com/" target="_blank" rel="noopener noreferrer">SkillFront</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="eyebrow">Official SkillFront Resource Page</div>
+          <h1>SkillFront Free Certification Programs</h1>
+          <p>
+            Browse selected SkillFront free certification programs, compare their focus areas, and go directly to the official registration pages and companion YouTube audiobook study resources.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programs">Browse Programs</a>
+            <a class="btn btn-secondary" href="https://www.skillfront.com/" target="_blank" rel="noopener noreferrer">Visit SkillFront</a>
+          </div>
+        </div>
+
+        <div class="notice">
+          This page is designed as a clean navigation hub. Registration, program access, exams, certification delivery, and any package updates are handled on the official SkillFront pages linked below.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="wrap">
+        <h2>Programs</h2>
+        <p class="lead">
+          Each card below includes a concise overview, package highlights, an official registration CTA, and a companion audiobook CTA.
+        </p>
+
+        <div class="grid">
+          <article class="card" id="business-entrepreneurship">
+            <span class="card-tag">Business & Entrepreneurship</span>
+            <h3>SkillFront Entrepreneur Program™: Foundations Of Business And Entrepreneurship™</h3>
+            <p>
+              An introductory business program focused on entrepreneurial thinking, problem-solving, producer mindset, broad capability building, and sustained commitment to growth.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> business foundations, entrepreneurship, mindset, problem solving</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 59 pages</li>
+              <li><strong>Audiobook:</strong> 63 minutes, 28 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/Free-Business-Entrepreneurship-Program-Certification" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=LJAbJxxnKD0" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="iso-27001">
+            <span class="card-tag">Information Security</span>
+            <h3>ISO/IEC 27001 Information Security Associate™</h3>
+            <p>
+              A practical entry-level overview of ISO/IEC 27001, including why the standard matters, ISMS scope, statement of applicability, audit programs, implementation steps, and organizational roles.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> ISO/IEC 27001, ISMS, audits, implementation, roles</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 63 pages</li>
+              <li><strong>Audiobook:</strong> 58 minutes, 26 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/ISO-IEC-27001-Information-Security-Associate" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=kfj79NFjC8A" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="iso-9001">
+            <span class="card-tag">Quality Management</span>
+            <h3>ISO 9001 Quality Management Systems Associate™</h3>
+            <p>
+              A structured introduction to ISO 9001 that covers business value, certification benefits, implementation flow, the quality management framework, core clauses, and typical organizational responsibilities.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> ISO 9001, quality management, implementation, roles</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 89 pages</li>
+              <li><strong>Audiobook:</strong> 1 hour, 26 minutes, 59 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/ISO-9001-Quality-Management-Systems-Associate" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=eVSj5nuYvrg" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="iso-20000">
+            <span class="card-tag">IT Service Management</span>
+            <h3>ISO/IEC 20000 IT Service Management Associate™</h3>
+            <p>
+              A foundation-level program on IT service management systems, covering the value of service management, core concepts of ISO/IEC 20000, implementation flow, framework structure, and role awareness.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> ISO/IEC 20000, ITSM, service management, implementation</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 80 pages</li>
+              <li><strong>Audiobook:</strong> 1 hour, 10 minutes, 33 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/ISO-IEC-20000-IT-Service-Management-Associate" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=Zx9tbFXtc7I" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="scrum">
+            <span class="card-tag">Agile & Scrum</span>
+            <h3>Certified Associate In Scrum Fundamentals™ (CASF™)</h3>
+            <p>
+              A beginner-friendly Scrum program covering the Agile Manifesto, self-organization, inspect-and-adapt thinking, Scrum values, team structure, and the roles of Scrum Master, Product Owner, and team members.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> Scrum fundamentals, Agile values, teams, roles</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 81 pages</li>
+              <li><strong>Audiobook:</strong> 1 hour, 15 minutes, 25 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/CASF-Certified-Associate-In-Scrum-Fundamentals" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=Ro0WH_wds_Q" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="lean-six-sigma-white-belt">
+            <span class="card-tag">Lean Six Sigma</span>
+            <h3>Certified Lean Six Sigma White Belt™ (CLSSWB™)</h3>
+            <p>
+              A broad introductory program spanning Lean basics, waste elimination, Lean principles, continuous improvement, JIT, 5S, Kaizen, Lean enterprise thinking, project management, and the path into Lean Six Sigma.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> Lean principles, waste reduction, continuous improvement, Lean Six Sigma</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 241 pages</li>
+              <li><strong>Audiobook:</strong> 3 hours, 56 minutes, 1 second</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/CLSSWB-Certified-Lean-Six-Sigma-White-Belt" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=e0Woss7nvWw" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="lean-foundations">
+            <span class="card-tag">Lean Foundations</span>
+            <h3>Lean Foundations Professional Certification™ (LFPC™)</h3>
+            <p>
+              A foundational Lean program that introduces core Lean principles, continuous improvement, JIT, Lean manufacturing, Lean enterprise ideas, risk awareness, Lean project management, and Lean innovation.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> Lean foundations, Lean enterprise, improvement, Lean projects</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 98 pages</li>
+              <li><strong>Audiobook:</strong> 1 hour, 55 minutes, 58 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/LFPC-Lean-Foundations-Professional-Certification" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=tKO0UY7nyuo" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+
+          <article class="card" id="insurance">
+            <span class="card-tag">Insurance Industry</span>
+            <h3>Certified Insurance Industry Fundamentals™ (CIIF™)</h3>
+            <p>
+              A practical introduction to insurance industry basics, including the history of insurance, risk pooling, risk transfer, reserves, major business lines, and core contractual language for newcomers and career changers.
+            </p>
+            <ul class="meta">
+              <li><strong>Focus:</strong> insurance fundamentals, risk pooling, products, contracts</li>
+              <li><strong>Included:</strong> certification, e-book, audiobook, verifiable digital badge</li>
+              <li><strong>E-book:</strong> 82 pages</li>
+              <li><strong>Audiobook:</strong> 52 minutes, 57 seconds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.skillfront.com/CIIF-Certified-Insurance-Industry-Fundamentals" target="_blank" rel="noopener noreferrer">Register Free Program</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/watch?v=Cp9V83fKyRU" target="_blank" rel="noopener noreferrer">Audiobook on YouTube</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-to-use">
+      <div class="wrap">
+        <h2>How to Use This Page</h2>
+        <p class="lead">
+          This page is meant to be useful first: review the program focus, open the official registration page for the program that fits your needs, and use the companion audiobook link if you want a listening-based study option.
+        </p>
+
+        <div class="simple-boxes">
+          <div class="simple-box">
+            <h3>1. Compare quickly</h3>
+            <p>Use the summaries to decide whether you want business, ISO, Scrum, Lean, or insurance-oriented study material.</p>
+          </div>
+          <div class="simple-box">
+            <h3>2. Register on the official page</h3>
+            <p>Each “Register Free Program” button goes directly to the corresponding SkillFront registration page.</p>
+          </div>
+          <div class="simple-box">
+            <h3>3. Study with the audiobook</h3>
+            <p>Each card also links to the related YouTube audiobook or training resource for easy review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-card">
+        <p>
+          This GitHub Pages site is an official SkillFront navigation hub for selected free certification programs and study resources.
+          For program registration, package details, terms, and delivery, please use the official SkillFront pages linked above.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
