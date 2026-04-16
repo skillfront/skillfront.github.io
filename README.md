@@ -85,6 +85,12 @@ This repository is designed as a clean public navigation hub for selected SkillF
 - Insurance Industry Fundamentals  
   https://www.youtube.com/watch?v=Cp9V83fKyRU
 
+## Related SkillFront Project
+
+[SkillFront Review and Public References](https://skillfront.github.io/skillfront-review/)
+
+[GitHub repository for the SkillFront Review project](https://github.com/skillfront/skillfront-review)
+
 ## Deployment Notes
 
 Use `index.html` as the live homepage of the GitHub Pages site.
